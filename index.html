@@ -94,6 +94,15 @@ section{padding:96px 0}
 .upload .u-t{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;margin-bottom:8px}
 .upload .u-s{color:var(--soft);font-size:13px;margin-top:12px}
 .slots{font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:16px}
+/* offer options */
+.opts{display:flex;flex-direction:column;gap:12px;margin:14px 0 18px}
+.opt{border:1px solid var(--line);border-radius:8px;padding:14px 16px;background:#fff}
+.opt.feat{border-color:var(--gold);background:#faf7f1}
+.opt .oh{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.opt .ot{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600}
+.opt .op{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold);font-size:17px;white-space:nowrap}
+.opt .od{color:var(--soft);font-size:13.5px;margin-top:4px}
+.opt .tagf{font-family:'Spline Sans Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:5px;display:block}
 
 /* reviews */
 .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:46px}
@@ -196,8 +205,19 @@ footer{border-top:1px solid var(--line);padding:38px 0;color:var(--soft);font-si
     <div class="rv"><img src="cover.jpg" alt="Anno familiealbum — pine linnen hardcover met goudfolie"></div>
     <div class="rv">
       <div class="eyebrow">De eerste 10 founding families</div>
-      <div class="price">€125 <small>daarna €195</small></div>
-      <div class="note">Founding-prijs, voor altijd vastgezet. Inclusief linnen bewaarbox.<br>Een boek om te bewaren — en ooit door te geven.</div>
+      <div class="h2" style="margin:6px 0 4px">Twee manieren om te beginnen.</div>
+      <div class="opts">
+        <div class="opt">
+          <div class="oh"><span class="ot">Dit jaar</span><span class="op">€125</span></div>
+          <div class="od">Eén boek van jullie afgelopen jaar — de mooiste manier om te starten. <span style="opacity:.6">(daarna €195)</span></div>
+        </div>
+        <div class="opt feat">
+          <span class="tagf">Het hele verhaal</span>
+          <div class="oh"><span class="ot">Haal je vorige jaren terug</span><span class="op">vanaf €500</span></div>
+          <div class="od">Elk jaar dat je kinderen al geleefd hebben, in één keer op je plank — één boek per jaar, de hele reeks meteen. €125 per jaar (founding).</div>
+        </div>
+      </div>
+      <div class="note" style="font-size:16px;margin:0 0 18px">Founding-prijs, voor altijd vastgezet. Inclusief linnen bewaarbox — een boek om te bewaren, en ooit door te geven.</div>
       <div class="upload">
         <div class="u-t">Klaar om te beginnen?</div>
         <p style="color:var(--soft);font-size:14.5px">Laat weten dat je erbij wilt zijn — je krijgt van ons een linkje om je foto's te delen.</p>
