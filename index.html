@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>anno · jullie jaar in één prachtig boek</title>
-<meta name="description" content="Eén prachtig boek van jullie jaar, samengesteld uit je eigen foto's. Je ziet het volledige boek eerst als digitale preview — je betaalt pas als je het écht mooi vindt.">
-<meta property="og:title" content="anno · jullie jaar in één prachtig boek">
-<meta property="og:description" content="Je deelt je foto's, wij doen de rest. Je ziet het volledige boek eerst als digitale preview — je betaalt pas als je het écht mooi vindt.">
+<title>anno · jullie jaar in één prachtig fotoalbum</title>
+<meta name="description" content="Een hoogwaardig fotoalbum van jullie jaar, volledig voor je samengesteld uit je eigen foto's. Je ziet het volledige fotoalbum eerst als digitale preview en je betaalt pas als je het écht mooi vindt.">
+<meta property="og:title" content="anno · jullie jaar in één prachtig fotoalbum">
+<meta property="og:description" content="Je deelt je foto's, wij maken jullie fotoalbum. Je ziet het volledige album eerst als digitale preview en je betaalt pas als je het écht mooi vindt.">
 <meta property="og:image" content="cover.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%2322302A'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' fill='%23C7A867' text-anchor='middle'%3Ea%3C/text%3E%3C/svg%3E">
 <!-- Contentsquare / Hotjar — session recording + heatmaps -->
@@ -59,8 +59,12 @@ html.reveal .rv.in{opacity:1;transform:none}
 
 nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0}
 nav .logo{font-family:'Cormorant Garamond',serif;font-size:29px;font-weight:600;letter-spacing:.02em}
-nav .r{font-family:'Spline Sans Mono',monospace;font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);border-bottom:1px solid var(--gold);padding:9px 2px 6px;margin:-9px -2px -6px;transition:color .2s}
-nav .r:hover{color:var(--cognac)}
+nav .links{display:flex;align-items:center;gap:30px}
+nav .links a{font-family:'Spline Sans Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);transition:color .2s}
+nav .links a:hover{color:var(--cognac)}
+nav .r{color:var(--pine)!important;border-bottom:1px solid var(--gold);padding:9px 2px 6px;margin:-9px -2px -6px}
+nav .r:hover{color:var(--cognac)!important}
+@media(max-width:700px){nav .links a:not(.r){display:none}}
 
 /* gold hairline offset frame — the editorial signature */
 .frame{position:relative}
@@ -200,12 +204,17 @@ footer .fbase{border-top:1px solid rgba(199,168,103,.22);margin-top:72px;padding
 <div class="wrap">
   <nav>
     <div class="logo">anno</div>
-    <a class="r" href="https://produces-delicious-recently-chance.trycloudflare.com">Maak jullie album</a>
+    <div class="links">
+      <a href="#hoe">Hoe het werkt</a>
+      <a href="#start">Prijzen</a>
+      <a href="#contact">Contact</a>
+      <a class="r" href="https://produces-delicious-recently-chance.trycloudflare.com">Maak jullie album</a>
+    </div>
   </nav>
 
   <header class="hero">
     <div class="htext rv in">
-      <div class="eyebrow">Hoogwaardig familiealbum · één per jaar</div>
+      <div class="eyebrow">Hoogwaardig fotoalbum · één per jaar</div>
       <h1>Jullie jaar in één <em>prachtig</em> boek.</h1>
       <p class="lead">Je deelt simpelweg je foto's, wij doen de rest.<br>Je ziet het volledige boek eerst als digitale preview.</p>
     </div>
@@ -265,7 +274,7 @@ footer .fbase{border-top:1px solid rgba(199,168,103,.22);margin-top:72px;padding
     <div class="rv">
       <div class="eyebrow">Elk jaar één</div>
       <div class="h2">Een rij die jullie <em>leven</em> vertelt.</div>
-      <p>Eén boek per jaar. Jaar na jaar groeit een rij die je nooit meer zou willen missen.</p>
+      <p>Eén fotoalbum per jaar. Jaar na jaar groeit een rij die je nooit meer zou willen missen.</p>
       <div class="years">2021 · 2022 · 2023 · 2024 · <b>2025</b></div>
     </div>
   </div>
@@ -321,13 +330,13 @@ footer .fbase{border-top:1px solid rgba(199,168,103,.22);margin-top:72px;padding
       <div class="opts">
         <a class="opt feat" href="https://produces-delicious-recently-chance.trycloudflare.com">
           <span class="tagf">Begin hier</span>
-          <div class="oh"><span class="ot">Jullie dit jaar</span><span class="op">€149</span></div>
-          <div class="od">Eén boek van jullie afgelopen jaar. De mooiste manier om te starten.</div>
+          <div class="oh"><span class="ot">Jullie afgelopen jaar</span><span class="op">€149</span></div>
+          <div class="od">Eén fotoalbum van jullie voorbije jaar, volledig voor je gemaakt. De mooiste manier om te starten.</div>
           <div class="go">Maak jullie album →</div>
         </a>
         <a class="opt" href="https://produces-delicious-recently-chance.trycloudflare.com">
-          <div class="oh"><span class="ot">Vorige jaren terughalen</span><span class="op">€149 / jaar</span></div>
-          <div class="od">Al oudere jaren? Je kunt later je hele reeks terughalen: één boek per jaar, met dezelfde matchende rug op de plank.</div>
+          <div class="oh"><span class="ot">Vorige jaren terughalen</span><span class="op">€149 per boek</span></div>
+          <div class="od">Al oudere jaren? Je kunt later je hele reeks terughalen: één boek per jaar, met dezelfde matchende rug op de plank. Geen abonnement, je beslist elk jaar opnieuw.</div>
           <div class="go">Meer weten →</div>
         </a>
       </div>
@@ -336,7 +345,7 @@ footer .fbase{border-top:1px solid rgba(199,168,103,.22);margin-top:72px;padding
   </div>
 </section>
 
-<footer>
+<footer id="contact">
   <div class="wrap">
     <div class="fgrid">
       <div class="fcol">
@@ -359,12 +368,13 @@ footer .fbase{border-top:1px solid rgba(199,168,103,.22);margin-top:72px;padding
       <div class="fcol">
         <h4>Goed geregeld</h4>
         <p>Eerst zien, dan pas betalen</p>
+        <p>Geen abonnement</p>
         <p>Veilig betalen via Mollie</p>
         <p>Bancontact · iDEAL · creditcard</p>
       </div>
     </div>
   </div>
-  <div class="fbase">© 2026 anno · familiealbum · één per jaar · België &amp; Nederland</div>
+  <div class="fbase">© 2026 anno · fotoalbum van jullie jaar · België &amp; Nederland</div>
 </footer>
 
 <script>
