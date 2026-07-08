@@ -5,129 +5,187 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>anno · jullie jaar in één prachtig boek</title>
 <meta name="description" content="Eén prachtig boek van jullie jaar, samengesteld uit je eigen foto's. Je ziet het volledige boek eerst als digitale preview — je betaalt pas als je het écht mooi vindt.">
+<meta property="og:title" content="anno · jullie jaar in één prachtig boek">
+<meta property="og:description" content="Je deelt je foto's, wij doen de rest. Je ziet het volledige boek eerst als digitale preview — je betaalt pas als je het écht mooi vindt.">
+<meta property="og:image" content="cover.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%2322302A'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' fill='%23C7A867' text-anchor='middle'%3Ea%3C/text%3E%3C/svg%3E">
 <!-- Contentsquare / Hotjar — session recording + heatmaps -->
 <script src="https://t.contentsquare.net/uxa/4c140775df5f2.js" defer></script>
 <!--
-  ┌──────────────────────────────────────────────────────────────────────┐
-  │  VARIANT C — the official Anno page. Two fonts (Cormorant + Hanken),  │
-  │  larger hero, no founding scarcity, €149 pricing, digital-preview     │
-  │  wording, two clean offer choices, more whitespace.                   │
-  └──────────────────────────────────────────────────────────────────────┘
+  ┌────────────────────────────────────────────────────────────────────────┐
+  │  VARIANT D — the official Anno page (visual elevation of variant C).   │
+  │  Spline Sans Mono labels, gold hairline offset frames, spec-sheet      │
+  │  rows, material macro band, foil-framed guarantee band, pine featured  │
+  │  card, trust footer. Section/.wrap padding bug fixed.                  │
+  │  QA helpers: ?noreveal (skip scroll-reveal) · ?shot (fixed-vh bands).  │
+  └────────────────────────────────────────────────────────────────────────┘
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script>document.documentElement.classList.add('reveal')</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Hanken+Grotesk:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&!/noreveal|shot/.test(location.search))document.documentElement.classList.add('reveal');
+/* ?shot — screenshot/QA aid: fixed-height bands instead of vh */
+if(location.search.includes('shot')){const s=document.createElement('style');s.textContent='.feature{min-height:560px!important}';document.head.appendChild(s)}
+</script>
 <style>
-:root{--bone:#F6F3EE;--ink:#1A1A1A;--pine:#22302A;--gold:#C7A867;--soft:#5b5a53;--line:#e4ddd0}
+:root{--bone:#F6F3EE;--ink:#1A1A1A;--pine:#22302A;--gold:#C7A867;--cognac:#7A4A2B;--soft:#5b5a53;--line:#e4ddd0}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bone);color:var(--ink);font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.68}
 img{max-width:100%;display:block}
+::selection{background:var(--gold);color:var(--pine)}
 .serif{font-family:'Cormorant Garamond',serif}
-.wrap{max-width:1180px;margin:0 auto;padding:0 30px}
-/* label — Hanken, spaced uppercase (no monospace) */
-.eyebrow{font-family:'Hanken Grotesk',sans-serif;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+/* horizontal only — so section vertical padding is never overridden */
+.wrap{max-width:1180px;margin:0 auto;padding-left:30px;padding-right:30px}
+
+/* label — Spline Sans Mono, the editorial tag voice */
+.eyebrow{font-family:'Spline Sans Mono',monospace;font-size:10.5px;font-weight:500;letter-spacing:.19em;text-transform:uppercase;color:var(--cognac);margin-bottom:16px;display:flex;align-items:center;gap:12px;white-space:nowrap}
+@media(max-width:480px){.eyebrow{white-space:normal}}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);flex:none}
+.eyebrow.center{justify-content:center}
+.eyebrow.center::after{content:"";width:26px;height:1px;background:var(--gold);flex:none}
 a{color:inherit;text-decoration:none}
-.btn{display:inline-block;background:var(--pine);color:var(--gold);font-family:'Hanken Grotesk',sans-serif;font-size:13.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:16px 32px;border-radius:3px;border:1px solid var(--pine);transition:.2s}
+
+.btn{display:inline-block;background:var(--pine);color:var(--gold);font-family:'Spline Sans Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;padding:17px 34px;border-radius:2px;border:1px solid var(--pine);transition:background .25s,color .25s,border-color .25s}
 .btn:hover{background:#1a241f}
-.btn.ghost{background:none;color:var(--pine);border-color:var(--gold)}
-.btn.ghost:hover{background:rgba(199,168,103,.1)}
+.btn.ghost{background:none;color:var(--pine);border-color:rgba(199,168,103,.75)}
+.btn.ghost:hover{border-color:var(--gold);background:rgba(199,168,103,.08)}
 
 /* reveal on scroll — fail-safe: content stays visible unless JS both hides AND reveals it */
-.rv{transition:opacity .7s ease,transform .7s cubic-bezier(.22,.61,.36,1)}
-html.reveal .rv{opacity:0;transform:translateY(14px)}
+.rv{transition:opacity .8s ease,transform .8s cubic-bezier(.22,.61,.36,1)}
+html.reveal .rv{opacity:0;transform:translateY(18px)}
 html.reveal .rv.in{opacity:1;transform:none}
 
-nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0}
-nav .logo{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;letter-spacing:.02em}
-nav .r{font-family:'Hanken Grotesk',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--pine);border-bottom:1px solid var(--gold);padding:9px 2px 6px;margin:-9px -2px -6px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0}
+nav .logo{font-family:'Cormorant Garamond',serif;font-size:29px;font-weight:600;letter-spacing:.02em}
+nav .r{font-family:'Spline Sans Mono',monospace;font-size:11.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--pine);border-bottom:1px solid var(--gold);padding:9px 2px 6px;margin:-9px -2px -6px;transition:color .2s}
+nav .r:hover{color:var(--cognac)}
 
-/* hero — larger image column, more air */
-.hero{display:grid;grid-template-columns:0.84fr 1.36fr;grid-template-areas:"text image" "cta image";column-gap:64px;align-items:center;padding:52px 0 108px}
+/* gold hairline offset frame — the editorial signature */
+.frame{position:relative}
+.frame::before{content:"";position:absolute;top:16px;left:16px;right:-16px;bottom:-16px;border:1px solid rgba(199,168,103,.55);border-radius:2px;pointer-events:none}
+.frame img{position:relative;border-radius:2px}
+.frame .cap{position:relative;font-family:'Spline Sans Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin-top:30px;text-align:right}
+@media(max-width:880px){.frame::before{top:10px;left:10px;right:-10px;bottom:-10px}.frame .cap{margin-top:22px}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:0.84fr 1.36fr;grid-template-areas:"text image" "cta image";column-gap:72px;align-items:center;padding:56px 0 128px}
 .hero .htext{grid-area:text}
 .hero .himg{grid-area:image}
-.hero h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(42px,6.2vw,72px);line-height:1.07;letter-spacing:-.01em;margin:20px 0 14px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(44px,6.2vw,76px);line-height:1.05;letter-spacing:-.015em;margin:22px 0 18px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--pine)}
 .hero p.lead{font-size:16.5px;color:#3a382f;max-width:30em;margin-bottom:0}
-.hero .cta{grid-area:cta;display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.hero-img{width:100%;border-radius:4px;box-shadow:0 40px 82px -50px rgba(34,48,42,.42)}
-/* mobile: text → image → CTAs (image above the buttons) */
-@media(max-width:880px){.hero{grid-template-columns:1fr;grid-template-areas:"text" "image" "cta";gap:32px;padding:32px 0 72px}.hero .cta{margin-top:0;gap:10px}.hero .cta .btn{flex:1 1 100%;text-align:center}.hero-img{box-shadow:0 24px 50px -34px rgba(34,48,42,.38)}}
+.hero .cta{grid-area:cta;display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.hero-img{width:100%;box-shadow:0 44px 88px -52px rgba(34,48,42,.5)}
+@media(max-width:880px){.hero{grid-template-columns:1fr;grid-template-areas:"text" "image" "cta";gap:36px;padding:34px 0 84px}.hero .cta{margin-top:0;gap:10px}.hero .cta .btn{flex:1 1 100%;text-align:center}.hero-img{box-shadow:0 24px 50px -34px rgba(34,48,42,.38)}}
 
 /* full-bleed emotional band */
-.feature{position:relative;min-height:78vh;display:flex;align-items:center;background-size:cover;background-position:center;color:#fff}
-.feature::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,28,24,.62) 0%,rgba(20,28,24,.26) 46%,rgba(20,28,24,0) 76%)}
-@media(max-width:820px){.feature{min-height:62vh}.feature::after{background:linear-gradient(180deg,rgba(20,28,24,.40) 0%,rgba(20,28,24,.72) 100%)}}
-.feature .wrap{position:relative;z-index:2}
+.feature{position:relative;min-height:80vh;display:flex;align-items:center;background-size:cover;background-position:center;color:#fff}
+.feature::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,28,24,.66) 0%,rgba(20,28,24,.28) 46%,rgba(20,28,24,0) 76%)}
+@media(max-width:820px){.feature{min-height:64vh}.feature::after{background:linear-gradient(180deg,rgba(20,28,24,.40) 0%,rgba(20,28,24,.74) 100%)}}
+/* material close-up band — flows straight into the pine guarantee band */
+.feature.material{background-position:center 30%}
+.feature.material::after{background:linear-gradient(90deg,rgba(10,16,13,.82) 0%,rgba(10,16,13,.46) 46%,rgba(10,16,13,.1) 76%)}
+.feature .wrap{position:relative;z-index:2;width:100%}
 .feature .txt{max-width:28em}
-.feature .quote{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);line-height:1.18;font-weight:600;margin-top:10px}
+.feature .quote{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4.2vw,48px);line-height:1.16;font-weight:500;margin-top:12px}
+.feature .quote em{font-style:italic}
 .feature .eyebrow{color:var(--gold)}
+.feature .eyebrow::before{background:var(--gold)}
 
 /* sections — generous vertical rhythm */
-section{padding:120px 0}
-@media(max-width:760px){section{padding:84px 0}}
-.h2{font-family:'Cormorant Garamond',serif;font-size:clamp(31px,4.2vw,46px);font-weight:600;line-height:1.1;letter-spacing:-.005em;margin-bottom:10px}
+section{padding:128px 0}
+@media(max-width:760px){section{padding:88px 0}}
+.h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.2vw,48px);font-weight:600;line-height:1.08;letter-spacing:-.01em;margin-bottom:12px}
+.h2 em{font-style:italic;font-weight:500}
 .lede{color:var(--soft);font-size:16px;max-width:34em}
 
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:46px;margin-top:56px}
-@media(max-width:760px){.steps{grid-template-columns:1fr;gap:34px}}
-.step .no{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:500;color:var(--gold)}
-.step h3{font-size:18px;font-weight:600;margin:12px 0 8px}
-.step p{color:var(--soft);font-size:14.5px}
+/* steps — editorial index: hairline top, mono number, serif title */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:52px;margin-top:64px}
+@media(max-width:760px){.steps{grid-template-columns:1fr;gap:38px}}
+.step{border-top:1px solid var(--line);padding-top:28px}
+.step .no{font-family:'Spline Sans Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.26em;color:var(--cognac)}
+.step h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;margin:16px 0 8px}
+.step p{color:var(--soft);font-size:14.5px;max-width:24em}
 
 /* split image+text */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:center}
-@media(max-width:820px){.split{grid-template-columns:1fr;gap:36px}}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:84px;align-items:center}
+@media(max-width:820px){.split{grid-template-columns:1fr;gap:46px}}
 .split.rev .imgcol{order:2}
 @media(max-width:820px){.split.rev .imgcol{order:0}}
-.split img{border-radius:4px;box-shadow:0 34px 70px -44px rgba(34,48,42,.4)}
+.split img{box-shadow:0 34px 70px -44px rgba(34,48,42,.4)}
 .split .h2{margin-bottom:16px}
 .split p{color:var(--soft);font-size:16px;max-width:28em}
-.tick{font-family:'Hanken Grotesk',sans-serif;font-size:12.5px;font-weight:600;letter-spacing:.05em;color:var(--pine);margin-top:22px;display:flex;gap:22px;flex-wrap:wrap}
-.tick span::before{content:"— "}
 
-/* guarantee band */
-.band{background:var(--pine);color:var(--bone);text-align:center}
+/* spec sheet — hairline rows, mono labels */
+.spec{margin-top:34px;border-top:1px solid var(--line);max-width:30em}
+.spec .row{display:flex;justify-content:space-between;gap:24px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--line)}
+.spec .k{font-family:'Spline Sans Mono',monospace;font-size:10.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--cognac);flex:none}
+.spec .v{font-size:14px;color:var(--ink);text-align:right}
+@media(max-width:430px){.spec .row{flex-direction:column;gap:2px}.spec .v{text-align:left}}
+
+/* years — mono index line under the series story */
+.years{font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.3em;color:var(--cognac);margin-top:30px}
+.years b{font-weight:500;color:var(--ink)}
+
+/* guarantee band — styled like the cover: pine linen + gold foil frame */
+.band{background:var(--pine);color:var(--bone)}
+.band .foil{border:1px solid rgba(199,168,103,.5);border-radius:2px;max-width:880px;margin:0 auto;padding:78px 40px;text-align:center;position:relative}
+.band .foil::before{content:"";position:absolute;inset:7px;border:1px solid rgba(199,168,103,.22);border-radius:1px;pointer-events:none}
+@media(max-width:600px){.band .foil{padding:56px 24px}}
 .band .h2{color:var(--bone)}
-.band .g-sub{color:rgba(246,243,238,.78);max-width:34em;margin:20px auto 0;font-size:16px}
-.band .eyebrow{color:var(--gold)}
+.band .h2 em{color:var(--gold)}
+.band .g-sub{color:rgba(246,243,238,.78);max-width:34em;margin:22px auto 0;font-size:16px}
+.band .eyebrow{color:var(--gold);justify-content:center}
+.band .eyebrow::before,.band .eyebrow::after{content:"";width:26px;height:1px;background:rgba(199,168,103,.6);flex:none}
 
-/* privacy */
-.privacy{background:#efeae0;border-radius:8px;padding:46px 34px;margin:0 auto;max-width:760px;text-align:center}
-.privacy .h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;margin-bottom:12px}
+/* privacy — a quiet paper insert */
+.privacy{background:#efeae0;border:1px solid var(--line);border-radius:2px;padding:56px 38px;margin:0 auto;max-width:780px;text-align:center}
+.privacy .h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;margin-bottom:12px}
 .privacy p{color:var(--soft);font-size:15px;max-width:40em;margin:0 auto}
+.privacy .tags{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-top:26px;font-family:'Spline Sans Mono',monospace;font-size:10.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--cognac)}
+.privacy .tags span::before{content:"·  ";color:var(--gold)}
 
 /* offer / start */
-.offer{display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:center}
-@media(max-width:820px){.offer{grid-template-columns:1fr;gap:38px;text-align:center}}
-.offer img{border-radius:4px;box-shadow:0 34px 70px -44px rgba(34,48,42,.45)}
-/* two choices — each card is the CTA; pick one */
-.opts{display:flex;flex-direction:column;gap:16px;margin:22px 0 26px}
-.opt{display:block;border:1px solid var(--line);border-radius:8px;padding:22px 24px;background:#fff;transition:.2s;position:relative}
-.opt:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 20px 44px -30px rgba(34,48,42,.5)}
-.opt.feat{border-color:var(--gold);background:#faf7f1}
-.opt .tagf{font-family:'Hanken Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block}
+.offer{display:grid;grid-template-columns:1fr 1fr;gap:84px;align-items:center}
+@media(max-width:820px){.offer{grid-template-columns:1fr;gap:52px;text-align:center}}
+.offer img{box-shadow:0 34px 70px -44px rgba(34,48,42,.45)}
+@media(max-width:820px){.offer .frame .cap{text-align:center}}
+/* two choices — the featured card echoes the book itself */
+.opts{display:flex;flex-direction:column;gap:16px;margin:26px 0 26px}
+.opt{display:block;border:1px solid var(--line);border-radius:2px;padding:26px 28px;background:transparent;transition:border-color .25s,transform .25s,box-shadow .25s;position:relative;text-align:left}
+.opt:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 22px 46px -32px rgba(34,48,42,.5)}
+.opt.feat{background:var(--pine);border-color:var(--pine);color:var(--bone)}
+.opt.feat:hover{box-shadow:0 26px 54px -30px rgba(34,48,42,.65)}
+.opt .tagf{font-family:'Spline Sans Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:block}
 .opt .oh{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
-.opt .ot{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600}
-.opt .op{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;color:var(--gold);font-size:19px;white-space:nowrap}
-.opt .od{color:var(--soft);font-size:13.5px;margin-top:6px;max-width:30em}
-.opt .go{font-family:'Hanken Grotesk',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--pine);margin-top:12px;opacity:0;transition:.2s}
+.opt .ot{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600}
+.opt .op{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;color:var(--cognac);font-size:20px;white-space:nowrap}
+.opt.feat .op{color:var(--gold)}
+.opt .od{color:var(--soft);font-size:13.5px;margin-top:7px;max-width:30em}
+.opt.feat .od{color:rgba(246,243,238,.72)}
+.opt .go{font-family:'Spline Sans Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--cognac);margin-top:14px;opacity:0;transition:opacity .25s}
+.opt.feat .go{color:var(--gold)}
 .opt:hover .go{opacity:1}
 @media(max-width:820px){.opt .go{opacity:1}}
 .offer .note{color:var(--soft);font-size:14px;max-width:32em}
 @media(max-width:820px){.offer .note{margin:0 auto}}
-@media(max-width:430px){.opt .oh{flex-direction:column;gap:3px;align-items:center}}
+@media(max-width:430px){.opt .oh{flex-direction:column;gap:3px;align-items:flex-start}}
 
-footer{background:var(--pine);color:var(--bone);padding:66px 0 32px;margin-top:0}
-.fcols{display:grid;grid-template-columns:1.7fr 1fr 1.3fr;gap:48px}
-@media(max-width:760px){.fcols{grid-template-columns:1fr;gap:32px}}
-.flogo{font-family:'Cormorant Garamond',serif;font-size:31px;font-weight:600;letter-spacing:.03em;margin-bottom:12px}
-.ftag{color:rgba(246,243,238,.68);font-size:15px;max-width:26em}
-.fh{font-family:'Hanken Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-footer a{display:block;color:rgba(246,243,238,.82);font-size:14.5px;margin-bottom:11px;width:fit-content;transition:.2s}
-footer a:hover{color:var(--gold)}
-.fnote{display:block;color:rgba(246,243,238,.5);font-size:13px;margin-top:10px;max-width:24em;line-height:1.5}
-.fbar{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:52px;padding-top:24px;border-top:1px solid rgba(246,243,238,.15);color:rgba(246,243,238,.55);font-size:12.5px;font-family:'Hanken Grotesk',sans-serif;letter-spacing:.04em}
+/* footer — pine, like closing the back cover; built for trust */
+footer{background:var(--pine);color:rgba(246,243,238,.68);padding:92px 0 0}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:56px;align-items:start}
+@media(max-width:820px){.fgrid{grid-template-columns:1fr 1fr;gap:44px}}
+@media(max-width:480px){.fgrid{grid-template-columns:1fr}}
+footer .logo{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:var(--bone);letter-spacing:.02em}
+footer .rule{width:26px;height:1px;background:var(--gold);margin:20px 0}
+footer .tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:rgba(246,243,238,.85);max-width:16em;line-height:1.5}
+footer h4{font-family:'Spline Sans Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+footer .fcol p,footer .fcol a{display:block;font-size:13.5px;line-height:2.1;color:rgba(246,243,238,.68)}
+footer .fcol a{transition:color .2s}
+footer .fcol a:hover{color:var(--gold)}
+footer .fbase{border-top:1px solid rgba(199,168,103,.22);margin-top:72px;padding:26px 0;text-align:center;font-family:'Spline Sans Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(246,243,238,.45)}
 </style>
 </head>
 <body>
@@ -135,18 +193,23 @@ footer a:hover{color:var(--gold)}
 <div class="wrap">
   <nav>
     <div class="logo">anno</div>
-    <a class="r" href="https://attacked-officials-saves-fiber.trycloudflare.com">Maak jullie album</a>
+    <a class="r" href="https://produces-delicious-recently-chance.trycloudflare.com">Maak jullie album</a>
   </nav>
 
   <header class="hero">
     <div class="htext rv in">
       <div class="eyebrow">Hoogwaardig familiealbum · één per jaar</div>
-      <h1>Jullie jaar in één prachtig boek.</h1>
+      <h1>Jullie jaar in één <em>prachtig</em> boek.</h1>
       <p class="lead">Je deelt simpelweg je foto's, wij doen de rest.<br>Je ziet het volledige boek eerst als digitale preview.</p>
     </div>
-    <div class="himg rv in"><img class="hero-img" src="hero.jpg" alt="Anno familiealbum — groen linnen hardcover met goudfolie, opengeslagen spread"></div>
+    <div class="himg rv in">
+      <div class="frame">
+        <img class="hero-img" src="hero.jpg" alt="Anno familiealbum — groen linnen hardcover met goudfolie, opengeslagen spread">
+        <div class="cap">familie-album · linnen &amp; goudfolie</div>
+      </div>
+    </div>
     <div class="cta">
-      <a class="btn" href="https://attacked-officials-saves-fiber.trycloudflare.com">Maak jullie album →</a>
+      <a class="btn" href="https://produces-delicious-recently-chance.trycloudflare.com">Maak jullie album →</a>
       <a class="btn ghost" href="#hoe">Hoe werkt het?</a>
     </div>
   </header>
@@ -156,7 +219,7 @@ footer a:hover{color:var(--gold)}
 <div class="feature" style="background-image:url('sofa.jpg')">
   <div class="wrap"><div class="txt rv">
     <div class="eyebrow">Waarom anno</div>
-    <div class="quote">Een heel jaar samen — nu nog op een telefoon. Anno geeft het een plek om te blijven.</div>
+    <div class="quote">Een heel jaar samen, nu nog op een telefoon. Anno geeft het een plek <em>om te blijven.</em></div>
   </div></div>
 </div>
 
@@ -173,12 +236,17 @@ footer a:hover{color:var(--gold)}
 <!-- lay-flat feature -->
 <section class="wrap">
   <div class="split">
-    <div class="imgcol rv"><img src="layflat.jpg" alt="Open album, hand die een pagina omslaat"></div>
+    <div class="imgcol rv"><div class="frame"><img src="layflat.jpg" alt="Open album, hand die een pagina omslaat"></div></div>
     <div class="rv">
       <div class="eyebrow">Het object</div>
-      <div class="h2">Zoals een boek hoort te openen.</div>
-      <p>Dikke pagina's die volledig plat openvallen — geen naad, geen foto die in de vouw verdwijnt. Gemaakt om te blijven liggen.</p>
-      <div class="tick"><span>Ligt volledig plat open</span><span>Linnen &amp; goudfolie</span><span>Dikke, stevige pagina's</span></div>
+      <div class="h2">Zoals een boek <em>hoort</em> te openen.</div>
+      <p>Dikke pagina's die volledig plat openvallen. Geen naad, geen foto die in de vouw verdwijnt. Gemaakt om te blijven liggen.</p>
+      <div class="spec">
+        <div class="row"><span class="k">Bindwijze</span><span class="v">Ligt volledig plat open</span></div>
+        <div class="row"><span class="k">Afwerking</span><span class="v">Linnen &amp; goudfolie</span></div>
+        <div class="row"><span class="k">Pagina's</span><span class="v">Dik &amp; stevig fotopapier</span></div>
+        <div class="row"><span class="k">Bewaarbox</span><span class="v">Linnen, inbegrepen</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -186,28 +254,40 @@ footer a:hover{color:var(--gold)}
 <!-- lives in your home -->
 <section class="wrap">
   <div class="split rev">
-    <div class="imgcol rv"><img src="series.jpg" alt="Vijf Anno albums op een rij — de jaren 2021 tot 2025, met het jaartal in goudfolie op de rug"></div>
+    <div class="imgcol rv"><div class="frame"><img src="series.jpg" alt="Vijf Anno albums op een rij — de jaren 2021 tot 2025, met het jaartal in goudfolie op de rug"></div></div>
     <div class="rv">
       <div class="eyebrow">Elk jaar één</div>
-      <div class="h2">Een rij die jullie leven vertelt.</div>
+      <div class="h2">Een rij die jullie <em>leven</em> vertelt.</div>
       <p>Eén boek per jaar. Jaar na jaar groeit een rij die je nooit meer zou willen missen.</p>
+      <div class="years">2021 · 2022 · 2023 · 2024 · <b>2025</b></div>
     </div>
   </div>
 </section>
 
-<!-- guarantee -->
-<section class="band">
+<!-- material close-up — premium is shown, not told -->
+<div class="feature material" style="background-image:url('detail.jpg')">
+  <div class="wrap"><div class="txt rv">
+    <div class="eyebrow">Het materiaal</div>
+    <div class="quote">Gemaakt om vast te houden, <em>en door te geven.</em></div>
+  </div></div>
+</div>
+
+<!-- guarantee — framed like the gold foil on the cover -->
+<section class="band" id="garantie">
   <div class="wrap rv">
-    <div class="eyebrow">De garantie</div>
-    <div class="h2">Eerst zien, dan pas betalen.</div>
-    <p class="g-sub">Je krijgt het volledige album als digitale preview. Pas als je het écht mooi vindt, drukken we het en ligt het bij je thuis.</p>
+    <div class="foil">
+      <div class="eyebrow">De garantie</div>
+      <div class="h2">Eerst zien, <em>dan pas</em> betalen.</div>
+      <p class="g-sub">Je krijgt het volledige album als digitale preview. Pas als je het écht mooi vindt, drukken we het en ligt het bij je thuis. Niet tevreden? Geld terug, en je houdt het boek.</p>
+    </div>
   </div>
 </section>
 
-<section class="wrap">
+<section class="wrap" id="privacy">
   <div class="privacy rv">
     <div class="h3">Je foto's zijn van jou.</div>
     <p>Veilig bewaard in de EU, alleen gebruikt om jullie album te maken, en na het drukken verwijderd. Geen training, geen doorverkoop.</p>
+    <div class="tags"><span>EU-hosting</span><span>Na het drukken verwijderd</span><span>Nooit gedeeld</span></div>
   </div>
 </section>
 
@@ -216,20 +296,25 @@ footer a:hover{color:var(--gold)}
 <!-- offer / start — two choices, pick one -->
 <section id="start" class="wrap">
   <div class="offer">
-    <div class="rv"><img src="spine.jpg" alt="Anno familiealbum — pine linnen hardcover met goudfolie belettering en verguld op snee"></div>
+    <div class="rv">
+      <div class="frame">
+        <img src="cover.jpg" alt="Anno familiealbum — pine linnen hardcover met goudfolie">
+        <div class="cap">linnen hardcover · bewaarbox inbegrepen</div>
+      </div>
+    </div>
     <div class="rv">
       <div class="eyebrow">Beginnen</div>
       <div class="h2" style="margin:6px 0 4px">Kies waar je begint.</div>
       <div class="opts">
-        <a class="opt feat" href="https://attacked-officials-saves-fiber.trycloudflare.com">
+        <a class="opt feat" href="https://produces-delicious-recently-chance.trycloudflare.com">
           <span class="tagf">Begin hier</span>
           <div class="oh"><span class="ot">Jullie dit jaar</span><span class="op">€149</span></div>
-          <div class="od">Eén boek van jullie afgelopen jaar — de mooiste manier om te starten.</div>
+          <div class="od">Eén boek van jullie afgelopen jaar. De mooiste manier om te starten.</div>
           <div class="go">Maak jullie album →</div>
         </a>
-        <a class="opt" href="https://attacked-officials-saves-fiber.trycloudflare.com">
+        <a class="opt" href="https://produces-delicious-recently-chance.trycloudflare.com">
           <div class="oh"><span class="ot">Vorige jaren terughalen</span><span class="op">€149 / jaar</span></div>
-          <div class="od">Al oudere jaren? Je kunt later je hele reeks terughalen — één boek per jaar, met dezelfde matchende rug op de plank.</div>
+          <div class="od">Al oudere jaren? Je kunt later je hele reeks terughalen: één boek per jaar, met dezelfde matchende rug op de plank.</div>
           <div class="go">Meer weten →</div>
         </a>
       </div>
@@ -239,28 +324,34 @@ footer a:hover{color:var(--gold)}
 </section>
 
 <footer>
-  <div class="wrap fcols">
-    <div>
-      <div class="flogo">anno</div>
-      <p class="ftag">Jullie jaar, in één prachtig boek. Eén per jaar — gemaakt om te bewaren, en ooit door te geven.</p>
-    </div>
-    <div>
-      <div class="fh">Anno</div>
-      <a href="#hoe">Hoe werkt het</a>
-      <a href="#start">Wat het kost</a>
-      <a href="mailto:info@morecircular.com">Contact</a>
-    </div>
-    <div>
-      <div class="fh">Vertrouwen</div>
-      <a href="#">Privacybeleid</a>
-      <a href="#">Algemene voorwaarden</a>
-      <span class="fnote">Je foto's blijven van jou — veilig bewaard in de EU en verwijderd na het drukken.</span>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fcol">
+        <div class="logo">anno</div>
+        <div class="rule"></div>
+        <p class="tag">Jullie jaar, in een boek dat blijft.</p>
+      </div>
+      <div class="fcol">
+        <h4>Anno</h4>
+        <a href="#hoe">Hoe het werkt</a>
+        <a href="#garantie">De garantie</a>
+        <a href="#privacy">Jullie privacy</a>
+        <a href="#start">Beginnen</a>
+      </div>
+      <div class="fcol">
+        <h4>Contact</h4>
+        <a href="mailto:hallo@annoalbum.com">hallo@annoalbum.com</a>
+        <p>We antwoorden binnen één werkdag.</p>
+      </div>
+      <div class="fcol">
+        <h4>Goed geregeld</h4>
+        <p>Eerst zien, dan pas betalen</p>
+        <p>Veilig betalen via Mollie</p>
+        <p>Bancontact · iDEAL · creditcard</p>
+      </div>
     </div>
   </div>
-  <div class="wrap fbar">
-    <span>© 2026 Anno · België &amp; Nederland</span>
-    <span>Met zorg gemaakt in de EU</span>
-  </div>
+  <div class="fbase">© 2026 anno · familiealbum · één per jaar · België &amp; Nederland</div>
 </footer>
 
 <script>
