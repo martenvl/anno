@@ -89,7 +89,7 @@ nav .r:hover{color:var(--cognac)!important}
 @media(max-width:880px){.frame::before{top:10px;left:10px;right:-10px;bottom:-10px}.frame .cap{margin-top:22px}}
 
 /* hero */
-.hero{display:grid;grid-template-columns:0.84fr 1.36fr;grid-template-areas:"text image" "cta image";column-gap:72px;align-items:center;padding:56px 0 128px}
+.hero{display:grid;grid-template-columns:0.84fr 1.36fr;grid-template-areas:"text image" "cta image";column-gap:72px;align-items:center;padding:56px 0 44px}
 .hero .htext{grid-area:text}
 .hero .himg{grid-area:image}
 .hero h1{font-family:'Hanken Grotesk',system-ui,sans-serif;font-weight:600;font-size:clamp(44px,6.2vw,76px);line-height:1.05;letter-spacing:-.015em;margin:22px 0 18px}
@@ -101,6 +101,11 @@ nav .r:hover{color:var(--cognac)!important}
 .hero-img{width:100%;box-shadow:0 44px 88px -52px rgba(34,48,42,.5)}
 @media(max-width:880px){.hero{grid-template-columns:1fr;grid-template-areas:"text" "image" "cta";gap:36px;padding:34px 0 84px}.hero .cta{margin-top:0;gap:10px}.hero .cta .btn{flex:1 1 100%;text-align:center}.hero-img{box-shadow:0 24px 50px -34px rgba(34,48,42,.38)}}
 
+.showvid{position:relative;z-index:1;display:block;width:auto;max-width:100%;max-height:560px;border-radius:2px;box-shadow:0 40px 80px -48px rgba(34,48,42,.5)}
+.vframe{display:inline-block;max-width:100%}
+.usps{margin:22px 0 28px;display:flex;flex-direction:column;gap:18px}
+.usp .ut{font-weight:600;font-size:16px;color:var(--ink)}
+.usp .ud{color:var(--soft);font-size:14.5px;max-width:30em;margin-top:3px}
 /* full-bleed emotional band */
 .feature{position:relative;min-height:80vh;display:flex;align-items:center;background-size:cover;background-position:center;color:#fff}
 .feature::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,28,24,.66) 0%,rgba(20,28,24,.28) 46%,rgba(20,28,24,0) 76%)}
@@ -229,9 +234,7 @@ footer .fbase{border-top:1px solid rgba(199,168,103,.22);margin-top:72px;padding
 
   <header class="hero">
     <div class="htext rv in">
-      <div class="eyebrow">Eén fotoalbum per jaar</div>
       <h1>Jullie jaar in één <em>prachtig</em> boek.</h1>
-      <p class="lead">Je deelt simpelweg je foto's, wij doen de rest. Je ziet het volledige boek eerst als digitale preview.</p>
     </div>
     <div class="himg rv in">
       <div class="frame">
@@ -244,6 +247,23 @@ footer .fbase{border-top:1px solid rgba(199,168,103,.22);margin-top:72px;padding
     </div>
   </header>
 </div>
+
+<section class="wrap" id="video" style="padding:44px 0 96px">
+  <div class="split">
+    <div class="imgcol rv" style="text-align:center">
+      <div class="frame vframe"><video class="showvid" src="book.mp4" poster="book-poster.jpg" autoplay muted loop playsinline preload="metadata"></video></div>
+    </div>
+    <div class="rv">
+      <div class="h2">Jullie jaar, om door te geven.</div>
+      <div class="usps">
+        <div class="usp"><div class="ut">Moeiteloos</div><div class="ud">Je deelt je foto's, wij kiezen de mooiste en stellen jullie boek samen. Jij doet niets.</div></div>
+        <div class="usp"><div class="ut">Luxueus afgewerkt</div><div class="ud">Velvet hardcover met goudfolie, in een bijpassende beschermhoes. Een echt object.</div></div>
+        <div class="usp"><div class="ut">Gemaakt om te blijven</div><div class="ud">Eén boek per jaar, om te bewaren en door te geven aan wie na jullie komt.</div></div>
+      </div>
+      <a class="btn" href="https://upload.annoalbum.com">Maak jullie album →</a>
+    </div>
+  </div>
+</section>
 
 <!-- emotional full-bleed -->
 <div class="feature" style="background-image:url('sofa.jpg')">
