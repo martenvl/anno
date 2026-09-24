@@ -85,7 +85,7 @@ a{color:inherit;text-decoration:none}
   linear-gradient(180deg,rgba(34,48,42,0) 45%,rgba(34,48,42,.5) 100%)}
 .hero .in{position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;
           gap:20px;padding:clamp(28px,4vw,52px)}
-.hero .in .h1{max-width:12ch}
+.hero .in .h1{max-width:19ch}
 .hero .in .lead{color:var(--bone);opacity:.94;max-width:34ch}
 .hero .in .btn{align-self:flex-start;margin-top:6px}
 @media(max-width:760px){.hero .frame{height:min(72vh,620px)}}
