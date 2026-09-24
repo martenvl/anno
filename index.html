@@ -3,73 +3,153 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>anno · fotoalbums, volledig voor je gemaakt</title>
-<meta name="description" content="Eén boek om te bewaren. Het familie-album van jullie jaar, of het album van jullie trouwdag — volledig voor je samengesteld uit je eigen foto's. Je ziet het hele boek en betaalt pas als je het mooi vindt.">
-<meta property="og:title" content="anno · fotoalbums, volledig voor je gemaakt">
-<meta property="og:description" content="Je deelt je foto's. Wij maken het boek. Je betaalt pas als je het gezien hebt.">
-<meta property="og:image" content="img/trouw-hero.jpg?v=3">
+<title>anno · het familie-album — jullie jaar in één boek</title>
+<meta name="description" content="Eén album van jullie jaar, met zorg samengesteld uit je eigen foto's. Linnen in de kleur van het jaar, 25 × 35 cm, pagina's die volledig plat openvallen. Je ziet het hele boek en betaalt pas als je het mooi vindt.">
+<link rel="canonical" href="https://annoalbum.com/">
+<meta property="og:title" content="anno · het familie-album">
+<meta property="og:description" content="Dit jaar was te mooi voor een telefoon. Jij deelt, wij maken — en je betaalt pas als je het gezien hebt.">
+<meta property="og:image" content="https://annoalbum.com/img/familie-hero.jpg?v=4">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%2322302A'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' fill='%23C7A867' text-anchor='middle'%3Ea%3C/text%3E%3C/svg%3E">
 <script src="https://t.contentsquare.net/uxa/4c140775df5f2.js" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CLNJJ17B7"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5CLNJJ17B7');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/anno.css">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Hanken+Grotesk:wght@400;500&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/anno.css?v=4">
 </head>
 <body>
 
-<div class="gate">
-  <nav class="nav">
-    <a class="wordmark" href="./">anno</a>
-    <div class="links mono">
-      <a class="sw" href="familie/">Familie</a>
-      <a class="sw" href="trouw/">Trouw</a>
+<nav class="nav">
+  <a class="wordmark" href="/">anno</a>
+  <div class="links mono">
+    <a href="#boek">Het boek</a>
+    <a href="#hoe">Hoe het werkt</a>
+    <a href="#prijs">Prijs</a>
+    <a href="trouw/">Trouw</a>
+  </div>
+  <a class="btn dark" href="https://upload.annoalbum.com?album=familie">Begin met dit jaar</a>
+</nav>
+
+<!-- HERO — contained, inset by the page gutter -->
+<header class="hero">
+  <div class="frame">
+    <img src="img/familie-hero.jpg?v=4" alt="Het familie-album in bordeaux linnen op een eiken salontafel, in laag avondlicht" style="object-position:center 62%">
+    <div class="shade"></div>
+    <div class="in">
+      <h1 class="h h1">Dit jaar was te mooi voor een telefoon.</h1>
+      <p class="lead">Eén boek van jullie jaar, samengesteld uit je eigen foto's. Jij deelt, wij maken — en je betaalt pas als je het gezien hebt.</p>
+      <a class="btn kobalt" href="https://upload.annoalbum.com?album=familie">Begin met dit jaar</a>
     </div>
-    <a class="mono cta" href="https://upload.annoalbum.com">Begin met jullie album</a>
-  </nav>
-
-  <div class="top">
-    <div class="mono eyebrow">Fotoalbums, volledig voor je gemaakt</div>
-    <h1 class="h h1">Eén boek. Om te bewaren.</h1>
-    <p class="lead">Je deelt je foto's. Wij maken het boek. Je betaalt pas als je het gezien hebt.</p>
   </div>
+</header>
 
-  <div class="halves">
-    <a class="half" href="familie/">
-      <img src="img/familie-gate.jpg?v=3" alt="Het familie-album in bordeaux linnen op de salontafel" style="object-position:center 60%">
-      <div class="shade"></div>
-      <div class="in">
-        <div class="mono">Familie</div>
-        <h2 class="h h2">Het familie-album</h2>
-        <p>Jullie jaar, elk jaar één. Linnen in de kleur van het jaar, jullie naam groot op het omslag.</p>
-        <span class="mono go">Bekijk het familie-album →</span>
-      </div>
-    </a>
-    <a class="half" href="trouw/">
-      <img src="img/trouw-box.jpg?v=3" alt="Het trouwalbum — dennengroen fluweel met goudfolie, in een bijpassende hoes">
-      <div class="shade"></div>
-      <div class="in">
-        <div class="mono">Trouw</div>
-        <h2 class="h h2">Het trouwalbum</h2>
-        <p>Jullie dag, één keer. Fluweel en goudfolie, gemaakt om over vijftig jaar nog open te gaan.</p>
-        <span class="mono go">Bekijk het trouwalbum →</span>
-      </div>
-    </a>
+<!-- ONE SENTENCE + THE SPEC TRIPLET (stated as fact, not claim) -->
+<section class="sec" id="boek">
+  <div class="statement" style="margin-bottom:var(--sec-m)">
+    <div class="mono eyebrow">Het familie-album</div>
+    <h2 class="h h2">Je telefoon is geen plank. Dit is een boek dat op de salontafel thuishoort.</h2>
   </div>
-
-  <div class="trust">
-    <span class="mono">Eerst zien, dan betalen</span>
-    <span class="mono">25 × 35 cm · ligt volledig plat</span>
-    <span class="mono">Gemaakt in België</span>
-    <span class="mono">Foto's blijven privé, in de EU</span>
+  <div class="specs">
+    <div><div class="mono eyebrow k">Formaat</div><div class="v">25 × 35 cm, staand. Hardcover in linnen, in de kleur van het jaar, met een bijpassende beschermhoes.</div></div>
+    <div><div class="mono eyebrow k">Papier</div><div class="v">Dik fotopapier. De pagina's vallen volledig plat open, zodat een foto over twee bladzijden doorloopt.</div></div>
+    <div><div class="mono eyebrow k">Inhoud</div><div class="v">Eén jaar, samengesteld uit jullie eigen foto's. Jullie naam en het jaartal op het omslag.</div></div>
   </div>
+</section>
 
-  <footer class="foot">
-    <div class="wordmark" style="font-size:22px">anno</div>
-    <div class="mono">Gemaakt in België, voor mensen met te veel foto's.</div>
-    <div class="links mono"><a href="familie/#privacy">Privacy</a><a href="mailto:hallo@annoalbum.com">Contact</a></div>
-  </footer>
+<!-- SEE BEFORE YOU PAY -->
+<section class="split">
+  <img src="img/familie-pages.jpg?v=5" alt="Het album open, met strijklicht over de dikke bladranden">
+  <div class="txt">
+    <div class="mono eyebrow">Eerst zien, dan betalen</div>
+    <h2 class="h h2">Je ziet het hele boek. Dan pas beslis je.</h2>
+    <p class="p soft">Jullie album staat klaar als digitale voorvertoning — elke pagina, elke foto. Wat niet klopt, halen we weg. Wat je mist, voegen we toe. Zo vaak als je wilt, zonder dat je ooit een editor opent.</p>
+  </div>
+</section>
+
+<!-- THE OBJECT -->
+<section class="split rev">
+  <div class="txt">
+    <div class="mono eyebrow">Het omslag</div>
+    <h2 class="h h2">Linnen, in de kleur van het jaar. Jullie naam groot op het omslag.</h2>
+    <p class="p soft">In een bijpassende beschermhoes, gemaakt om jaren op de plank te staan. Het jaartal en de familienaam staan in folie op de rug, zodat je de rij kunt lezen zonder een boek te hoeven pakken.</p>
+  </div>
+  <img src="img/familie-corner.jpg?v=5" alt="De hoek van het omslag: geweven linnen, de scherpe hoek en anno in folie" style="object-position:center 45%">
+</section>
+
+<!-- THE SEVEN COLOURS, as a swatch row -->
+<section class="sec">
+  <div class="caption" style="padding:0 0 var(--sec-m)">
+    <h2 class="h h2">Elk jaar zijn eigen kleur.</h2>
+    <p class="p soft">Begin je later, dan begin je met de kleur van dat jaar. De rij op de plank wordt elk jaar kleurrijker.</p>
+  </div>
+  <div class="swatches">
+    <div class="sw" style="background:#D3A79A"><div class="t" style="color:#7A2E3A">FAMILIE</div><div class="y" style="color:#7A2E3A">DE SMET 2020</div><div class="a" style="color:#7A2E3A">anno</div></div>
+    <div class="sw" style="background:#4A63B3"><div class="t" style="color:#F2D77A">FAMILIE</div><div class="y" style="color:#F6F3EE">DE SMET 2021</div><div class="a" style="color:#F6F3EE">anno</div></div>
+    <div class="sw" style="background:#F2D77A"><div class="t" style="color:#B8892C">FAMILIE</div><div class="y" style="color:#5A3A0E">DE SMET 2022</div><div class="a" style="color:#5A3A0E">anno</div></div>
+    <div class="sw" style="background:#8A9A7B"><div class="t" style="color:#F6F3EE">FAMILIE</div><div class="y" style="color:#22302A">DE SMET 2023</div><div class="a" style="color:#22302A">anno</div></div>
+    <div class="sw" style="background:#7B4B33"><div class="t" style="color:#DDB88E">FAMILIE</div><div class="y" style="color:#DDB88E">DE SMET 2024</div><div class="a" style="color:#DDB88E">anno</div></div>
+    <div class="sw" style="background:#BEDDE0"><div class="t" style="color:#D6386A">FAMILIE</div><div class="y" style="color:#D6386A">DE SMET 2025</div><div class="a" style="color:#D6386A">anno</div></div>
+    <div class="sw" style="background:#6E2A38"><div class="t" style="color:#EDB3AA">FAMILIE</div><div class="y" style="color:#EDB3AA">DE SMET 2026</div><div class="a" style="color:#EDB3AA">anno</div></div>
+  </div>
+  <div class="swatch-cap"><div class="mono eyebrow">De kleuren van de rij</div><span>2020 roze · 2021 kobalt · 2022 geel · 2023 salie · 2024 cognac · 2025 ijsblauw · 2026 bordeaux</span></div>
+</section>
+
+<!-- THE ROW -->
+<section>
+  <img class="band" src="img/familie-row.jpg?v=4" alt="Zeven familie-albums naast elkaar op een eiken plank, elk jaar in zijn eigen kleur, met jaartal en naam op de rug" style="object-position:center 38%">
+  <div class="caption">
+    <h2 class="h h2">Elk jaar één.</h2>
+    <p class="p soft">Zelfde boek, nieuw jaartal. Je beslist elk jaar opnieuw — nooit automatisch. Eerdere jaren haal je later in.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS + PRICE -->
+<section class="sec howprice" id="hoe">
+  <div class="how">
+    <div class="mono eyebrow">Hoe het werkt</div>
+    <div class="step"><div class="n">I</div><div><h3 class="h h3">Deel je foto's</h3><p>Van beide telefoons, via één link. Meer hoef je niet te doen.</p></div></div>
+    <div class="step"><div class="n">II</div><div><h3 class="h h3">Wij maken het boek</h3><p>Uit al jullie foto's kiezen we de momenten die ertoe doen, en zetten ze in volgorde.</p></div></div>
+    <div class="step"><div class="n">III</div><div><h3 class="h h3">Bekijk, dan pas betalen</h3><p>Je ziet het hele album. Mooi? Dan betaal je, en drukken we. Niet mooi? Dan kost het je niets.</p></div></div>
+  </div>
+  <div class="price" id="prijs">
+    <div class="mono eyebrow" style="margin-bottom:10px">Prijs</div>
+    <div class="amount">€ 219</div>
+    <p>Per jaarboek, alles inbegrepen: de samenstelling, de hardcover van 25 × 35 cm in linnen, de beschermhoes, de voorvertoning met onbeperkt aanpassen en de verzending in België en Nederland.</p>
+    <a class="btn cognacb" href="https://upload.annoalbum.com?album=familie">Begin met dit jaar</a>
+  </div>
+</section>
+
+<!-- SERVICE BAND — courtesy stated as fact -->
+<div class="service">
+  <div><div class="mono eyebrow k">Vrijblijvend</div><p>Het maken en bekijken van de voorvertoning kost niets. Je betaalt pas als je het boek wilt hebben.</p></div>
+  <div><div class="mono eyebrow k">Onbeperkt aanpassen</div><p>Wat je anders wilt, passen we aan — zo vaak als nodig, tot het klopt.</p></div>
+  <div><div class="mono eyebrow k">Verzending inbegrepen</div><p>Verzekerd verzonden naar België en Nederland, in de prijs inbegrepen.</p></div>
 </div>
+
+<!-- THE ONE SATURATED SECTION -->
+<section class="promise" id="privacy">
+  <div class="in">
+    <div class="mono">De belofte</div>
+    <h2 class="h h2">Niet mooi? Dan betaal je niets.</h2>
+    <p>Je beslist pas als je het hele boek gezien hebt. Je foto's blijven van jullie: ze worden nooit gebruikt om modellen te trainen, en na het drukken verwijderen we ze.</p>
+    <a class="btn geel" style="margin-top:8px" href="https://upload.annoalbum.com?album=familie">Maak jullie voorvertoning</a>
+  </div>
+</section>
+
+<!-- CROSS-LINK -->
+<section class="cross">
+  <div>
+    <div class="mono eyebrow" style="margin-bottom:10px">Ook van anno</div>
+    <h3 class="h h3">Het trouwalbum — jullie dag, één keer, in fluweel en goudfolie.</h3>
+  </div>
+  <a class="btn salie" href="trouw/">Bekijk het trouwalbum</a>
+</section>
+
+<footer class="foot">
+  <div class="wordmark">anno</div>
+  <div class="mono">Gemaakt in België. Eén boek per jaar.</div>
+  <div class="links mono"><a href="#privacy">Privacy</a><a href="mailto:hallo@annoalbum.com">Contact</a></div>
+</footer>
 
 </body>
 </html>
