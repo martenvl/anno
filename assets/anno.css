@@ -55,16 +55,6 @@ a{color:inherit;text-decoration:none}
 .btn.dark:hover{background:transparent;border-color:var(--bordeaux);color:var(--bordeaux)}
 .btn.light{background:var(--bone);color:var(--pine)}
 .btn.light:hover{background:transparent;border-color:var(--bone);color:var(--bone)}
-.btn.kobalt{background:#4A63B3;color:var(--bone)}
-.btn.kobalt:hover{background:transparent;border-color:#4A63B3;color:#4A63B3}
-.btn.cognacb{background:#7B4B33;color:var(--bone)}
-.btn.cognacb:hover{background:transparent;border-color:#7B4B33;color:#7B4B33}
-.btn.geel{background:#F2D77A;color:var(--pine)}
-.btn.geel:hover{background:transparent;border-color:#B8892C;color:#5A3A0E}
-.btn.salie{background:#8A9A7B;color:var(--bone)}
-.btn.salie:hover{background:transparent;border-color:#8A9A7B;color:#4A5741}
-.btn.roze{background:#D3A79A;color:#7A2E3A}
-.btn.roze:hover{background:transparent;border-color:#D3A79A;color:#7A2E3A}
 .btn.outline{background:none;border-color:var(--ink);color:var(--ink)}
 .btn.outline:hover{background:var(--ink);color:var(--bone)}
 .link{border-bottom:1px solid currentColor;padding-bottom:3px}
