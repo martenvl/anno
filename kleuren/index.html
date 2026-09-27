@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>anno · welke rij vind jij de mooiste?</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Help ons kiezen: welke kleurvolgorde van de anno jaarboeken vind jij het mooist?">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%2322302A'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' fill='%23C7A867' text-anchor='middle'%3Ea%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bone:#F6F3EE;--ink:#333;--soft:#666;--line:rgba(51,51,51,.18);--pine:#22302A;--bordeaux:#6E2A38;--cognac:#7A4A2B;--pad:20px}
+@media(min-width:760px){:root{--pad:40px}}
+@media(min-width:1100px){:root{--pad:64px}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bone);color:var(--ink);font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--pad)}
+.mono{font-family:'Spline Sans Mono',monospace;text-transform:uppercase;letter-spacing:.2em;font-size:12px;line-height:1.7}
+.eyebrow{color:var(--cognac)}
+header{padding:40px 0 22px}
+h1{font-weight:400;font-size:clamp(26px,3vw,38px);line-height:1.15;letter-spacing:-.01em;margin:14px 0 12px;max-width:22ch}
+header p{color:var(--soft);max-width:60ch}
+header p+p{margin-top:12px}
+
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding-bottom:28px}
+@media(max-width:1100px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}}
+.card{position:relative;border:2px solid transparent;background:#fff;cursor:pointer;transition:border-color .18s,transform .18s}
+.card:hover{transform:translateY(-2px)}
+.card img{width:100%}
+.card .cap{display:flex;justify-content:space-between;gap:8px;padding:8px 10px 10px;align-items:baseline}
+.card .cap b{font-weight:500;font-size:14px}
+.card .cap span{font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.06em;color:var(--soft);text-align:right}
+.card.on{border-color:var(--bordeaux)}
+.rank{position:absolute;top:8px;left:8px;width:34px;height:34px;border-radius:50%;background:var(--bordeaux);color:var(--bone);
+      display:none;align-items:center;justify-content:center;font-weight:500;font-size:16px}
+.card.on .rank{display:flex}
+
+.panel{position:sticky;bottom:0;background:var(--bone);border-top:1px solid var(--line);padding:16px var(--pad) 22px;margin:0 calc(var(--pad)*-1)}
+.panel .in{max-width:1440px;margin:0 auto;display:flex;gap:14px;align-items:flex-end;flex-wrap:wrap}
+.chosen{flex:1 1 260px;min-width:0}
+.chosen .mono{color:var(--soft)}
+.chosen .list{font-size:16px;margin-top:4px}
+label{display:block}
+label .mono{color:var(--soft);margin-bottom:6px}
+input,textarea{font-family:inherit;font-size:15px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:0;padding:12px 14px;width:100%}
+textarea{min-height:46px;resize:vertical}
+.f-name{flex:0 1 220px}.f-note{flex:1 1 320px}
+button{font-family:'Spline Sans Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:.06em;
+       padding:16px 28px;border:1px solid var(--bordeaux);border-radius:0;background:var(--bordeaux);color:var(--bone);cursor:pointer;
+       transition:background .2s,color .2s}
+button:hover:not(:disabled){background:transparent;color:var(--bordeaux)}
+button:disabled{opacity:.4;cursor:not-allowed}
+.done{display:none;padding:40px 0 80px}
+.done h2{font-weight:400;font-size:26px;margin-bottom:12px}
+.done .send{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.done a.btn{display:inline-block;font-family:'Spline Sans Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:.06em;
+            padding:16px 28px;border:1px solid var(--pine);color:var(--pine);text-decoration:none}
+.done a.btn.fill{background:var(--pine);color:var(--bone)}
+pre{white-space:pre-wrap;background:#fff;border:1px solid var(--line);padding:16px;margin-top:18px;font-family:'Spline Sans Mono',monospace;font-size:12.5px;line-height:1.7}
+footer{padding:30px 0 50px;color:var(--soft);font-size:13px;border-top:1px solid var(--line);margin-top:20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="mono eyebrow">anno · jaarboeken</div>
+  <h1>Welke rij zou jij op je plank willen?</h1>
+  <p>Elk jaar krijgt een eigen kleur linnen. Na acht jaar staat er een rij. Hieronder twintig mogelijke volgordes — precies dezelfde boeken, alleen een andere kleurvolgorde.</p>
+  <p><strong>Kies je top 3</strong>: tik op je favoriet, dan op je tweede, dan op je derde. Nog eens tikken maakt de keuze ongedaan.</p>
+</header>
+
+<div class="grid" id="grid"></div>
+
+<div class="panel">
+  <div class="in">
+    <div class="chosen">
+      <div class="mono">Jouw top 3</div>
+      <div class="list" id="chosen">Nog niets gekozen</div>
+    </div>
+    <label class="f-name"><span class="mono">Je naam</span><input id="naam" placeholder="Voornaam" autocomplete="name"></label>
+    <label class="f-note"><span class="mono">Opmerking (optioneel)</span><textarea id="opm" placeholder="Wat maakt die ene rij beter?"></textarea></label>
+    <button id="send" disabled>Versturen</button>
+  </div>
+</div>
+
+<section class="done" id="done">
+  <h2>Bedankt — nog één tik.</h2>
+  <p>Kies hoe je het terugstuurt. De tekst staat al klaar.</p>
+  <div class="send">
+    <a class="btn fill" id="wa" target="_blank" rel="noopener">Via WhatsApp</a>
+    <a class="btn" id="mail">Via e-mail</a>
+    <a class="btn" id="copy" href="#">Kopieer de tekst</a>
+  </div>
+  <pre id="summary"></pre>
+</section>
+
+<footer>anno · Gemaakt in België. Deze pagina is alleen om kleuren te kiezen — hij staat niet in Google.</footer>
+</div>
+
+<script>
+const V = [
+ ["A","limoen · kobalt · geel · pistache · cognac · ijsblauw · bordeaux · ecru"],
+ ["B","ecru · koraal · olijf · geel · houtskool · limoen · cognac · ijsblauw"],
+ ["C","ecru · geel · limoen · ijsblauw · pistache · cognac · bordeaux · houtskool"],
+ ["D","houtskool · inkt · bordeaux · cognac · olijf · limoen · geel · ecru"],
+ ["E","ecru · houtskool · koraal · geel · limoen · framboos · inkt · cognac"],
+ ["F","limoen · cognac · olijf · houtskool · inkt · klei · geel · koraal"],
+ ["G","koraal · mandarijn · cognac · geel · olijf · pistache · steenblauw · inkt"],
+ ["H","inkt · steenblauw · ijsblauw · mist · olijf · geel · mandarijn · koraal"],
+ ["I","ecru · steenblauw · olijf · klei · cognac · mist · houtskool · koraal"],
+ ["J","ecru · olijf · limoen · klei · steenblauw · framboos · houtskool · cognac"],
+ ["K","geel · mandarijn · koraal · limoen · ecru · olijf · cognac · houtskool"],
+ ["L","ecru · mist · steenblauw · olijf · klei · cognac · bordeaux · houtskool"],
+ ["M","olijf · koraal · limoen · framboos · pistache · bordeaux · ecru · inkt"],
+ ["N","ijsblauw · ecru · geel · kobalt · limoen · steenblauw · inkt · koraal"],
+ ["O","geel · mandarijn · ijsblauw · steenblauw · limoen · olijf · framboos · bordeaux"],
+ ["P","ecru · klei · cognac · olijf · bordeaux · houtskool · mist · limoen"],
+ ["Q","framboos · geel · kobalt · limoen · koraal · ijsblauw · mandarijn · ecru"],
+ ["R","ecru · mist · olijf · cognac · limoen · koraal · geel · houtskool"],
+ ["S","geel · houtskool · limoen · inkt · koraal · bordeaux · ijsblauw · cognac"],
+ ["T","pistache · framboos · olijf · klei · limoen · koraal · ecru · houtskool"]
+];
+const picks = [];
+const grid = document.getElementById('grid');
+V.forEach(([k, order]) => {
+  const c = document.createElement('div');
+  c.className = 'card'; c.dataset.k = k;
+  c.innerHTML = `<div class="rank"></div><img src="../img/kleuren/${k}.jpg" alt="Rij ${k}" loading="lazy">
+                 <div class="cap"><b>${k}</b><span>${order}</span></div>`;
+  c.addEventListener('click', () => toggle(k));
+  grid.appendChild(c);
+});
+function toggle(k){
+  const i = picks.indexOf(k);
+  if (i > -1) picks.splice(i, 1);
+  else if (picks.length < 3) picks.push(k);
+  else return;
+  paint();
+}
+function paint(){
+  document.querySelectorAll('.card').forEach(c => {
+    const i = picks.indexOf(c.dataset.k);
+    c.classList.toggle('on', i > -1);
+    c.querySelector('.rank').textContent = i > -1 ? i + 1 : '';
+  });
+  document.getElementById('chosen').textContent =
+    picks.length ? picks.map((k, i) => `${i+1}. ${k}`).join('   ') : 'Nog niets gekozen';
+  document.getElementById('send').disabled = picks.length < 3;
+}
+document.getElementById('send').addEventListener('click', () => {
+  const naam = (document.getElementById('naam').value || '').trim();
+  if (!naam) { document.getElementById('naam').focus(); return; }
+  const opm = (document.getElementById('opm').value || '').trim();
+  const txt = `anno kleurkeuze\nNaam: ${naam}\n1. ${picks[0]}\n2. ${picks[1]}\n3. ${picks[2]}`
+            + (opm ? `\nOpmerking: ${opm}` : '');
+  document.getElementById('summary').textContent = txt;
+  document.getElementById('wa').href = 'https://wa.me/?text=' + encodeURIComponent(txt);
+  document.getElementById('mail').href = 'mailto:info@morecircular.com?subject='
+    + encodeURIComponent('anno kleurkeuze — ' + naam) + '&body=' + encodeURIComponent(txt);
+  document.querySelector('.panel').style.display = 'none';
+  document.getElementById('grid').style.display = 'none';
+  document.querySelector('header').style.display = 'none';
+  document.getElementById('done').style.display = 'block';
+  window.scrollTo({top: 0, behavior: 'smooth'});
+});
+document.getElementById('copy').addEventListener('click', e => {
+  e.preventDefault();
+  navigator.clipboard.writeText(document.getElementById('summary').textContent)
+    .then(() => { e.target.textContent = 'Gekopieerd'; setTimeout(() => e.target.textContent = 'Kopieer de tekst', 1600); });
+});
+paint();
+</script>
+</body>
+</html>
