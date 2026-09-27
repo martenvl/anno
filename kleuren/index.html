@@ -97,14 +97,14 @@ footer{padding:30px 0 50px;color:var(--soft);font-size:13px;border-top:1px solid
 </div>
 
 <section class="done" id="done">
-  <h2>Bedankt — nog één tik.</h2>
-  <p>Kies hoe je het terugstuurt. De tekst staat al klaar.</p>
-  <div class="send">
+  <h2 id="done-title">Bedankt — je keuze is verstuurd.</h2>
+  <p id="done-sub">Fijn dat je even keek. Wil je zien wat het is? <a class="tolink mono" href="/">Bekijk de website →</a></p>
+  <div class="send" id="fallback" style="display:none">
     <a class="btn fill" id="wa" target="_blank" rel="noopener">Via WhatsApp</a>
     <a class="btn" id="mail">Via e-mail</a>
     <a class="btn" id="copy" href="#">Kopieer de tekst</a>
   </div>
-  <pre id="summary"></pre>
+  <pre id="summary" style="display:none"></pre>
 </section>
 
 <footer><span>anno · Gemaakt in België.</span> <a class="tolink mono" href="/">Bekijk de website →</a></footer>
@@ -160,12 +160,27 @@ function paint(){
     picks.length ? picks.map((k, i) => `${i+1}. ${k}`).join('   ') : 'Nog niets gekozen';
   document.getElementById('send').disabled = picks.length < 3;
 }
+const ENDPOINT = 'https://formspree.io/f/xqpayooq';
 document.getElementById('send').addEventListener('click', () => {
   const naam = (document.getElementById('naam').value || '').trim();
   if (!naam) { document.getElementById('naam').focus(); return; }
   const opm = (document.getElementById('opm').value || '').trim();
   const txt = `anno kleurkeuze\nNaam: ${naam}\n1. ${picks[0]}\n2. ${picks[1]}\n3. ${picks[2]}`
             + (opm ? `\nOpmerking: ${opm}` : '');
+  const btn = document.getElementById('send');
+  btn.disabled = true; btn.textContent = 'Versturen…';
+  fetch(ENDPOINT, {
+    method: 'POST', headers: {'Accept':'application/json','Content-Type':'application/json'},
+    body: JSON.stringify({naam, eerste: picks[0], tweede: picks[1], derde: picks[2],
+                          opmerking: opm, samenvatting: txt})
+  }).then(r => {
+    if (!r.ok) throw new Error(r.status);
+  }).catch(() => {                                  // network down, or the free quota is used up
+    document.getElementById('done-title').textContent = 'Bijna — nog één tik.';
+    document.getElementById('done-sub').textContent = 'Versturen lukte niet automatisch. Stuur je keuze even zo door:';
+    document.getElementById('fallback').style.display = 'flex';
+    document.getElementById('summary').style.display = 'block';
+  });
   document.getElementById('summary').textContent = txt;
   document.getElementById('wa').href = 'https://wa.me/?text=' + encodeURIComponent(txt);
   document.getElementById('mail').href = 'mailto:info@morecircular.com?subject='
