@@ -79,7 +79,7 @@ footer{padding:30px 0 50px;color:var(--soft);font-size:13px;border-top:1px solid
 <header>
   <div class="mono eyebrow">anno · premium familie-albums, één per jaar</div>
   <h1>Welke rij zou jij op je plank willen?</h1>
-  <p><strong>Kies je top 3</strong>: tik op je favoriet, dan op je tweede, dan op je derde. Nog eens tikken maakt de keuze ongedaan.</p>
+  <p><strong>Kies je twee favorieten</strong>: tik op je favoriet, dan op je tweede. Nog eens tikken maakt de keuze ongedaan.</p>
 </header>
 
 <div class="grid" id="grid"></div>
@@ -87,7 +87,7 @@ footer{padding:30px 0 50px;color:var(--soft);font-size:13px;border-top:1px solid
 <div class="panel">
   <div class="in">
     <div class="chosen">
-      <div class="mono">Jouw top 3</div>
+      <div class="mono">Jouw twee</div>
       <div class="list" id="chosen">Nog niets gekozen</div>
     </div>
     <label class="f-name"><span class="mono">Je naam</span><input id="naam" placeholder="Voornaam" autocomplete="name"></label>
@@ -146,7 +146,7 @@ V.forEach(([k, order]) => {
 function toggle(k){
   const i = picks.indexOf(k);
   if (i > -1) picks.splice(i, 1);
-  else if (picks.length < 3) picks.push(k);
+  else if (picks.length < 2) picks.push(k);
   else return;
   paint();
 }
@@ -158,20 +158,20 @@ function paint(){
   });
   document.getElementById('chosen').textContent =
     picks.length ? picks.map((k, i) => `${i+1}. ${k}`).join('   ') : 'Nog niets gekozen';
-  document.getElementById('send').disabled = picks.length < 3;
+  document.getElementById('send').disabled = picks.length < 2;
 }
 const ENDPOINT = 'https://formspree.io/f/xqpayooq';
 document.getElementById('send').addEventListener('click', () => {
   const naam = (document.getElementById('naam').value || '').trim();
   if (!naam) { document.getElementById('naam').focus(); return; }
   const opm = (document.getElementById('opm').value || '').trim();
-  const txt = `anno kleurkeuze\nNaam: ${naam}\n1. ${picks[0]}\n2. ${picks[1]}\n3. ${picks[2]}`
+  const txt = `anno kleurkeuze\nNaam: ${naam}\n1. ${picks[0]}\n2. ${picks[1]}`
             + (opm ? `\nOpmerking: ${opm}` : '');
   const btn = document.getElementById('send');
   btn.disabled = true; btn.textContent = 'Versturen…';
   fetch(ENDPOINT, {
     method: 'POST', headers: {'Accept':'application/json','Content-Type':'application/json'},
-    body: JSON.stringify({naam, eerste: picks[0], tweede: picks[1], derde: picks[2],
+    body: JSON.stringify({naam, eerste: picks[0], tweede: picks[1],
                           opmerking: opm, samenvatting: txt})
   }).then(r => {
     if (!r.ok) throw new Error(r.status);
