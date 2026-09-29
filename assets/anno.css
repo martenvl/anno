@@ -57,7 +57,12 @@ a{color:inherit;text-decoration:none}
 .btn.light:hover{background:transparent;border-color:var(--bone);color:var(--bone)}
 .btn.outline{background:none;border-color:var(--ink);color:var(--ink)}
 .btn.outline:hover{background:var(--ink);color:var(--bone)}
-.link{border-bottom:1px solid currentColor;padding-bottom:3px}
+.link{border-bottom:1px solid currentColor;padding-bottom:3px;font-family:'Spline Sans Mono','Courier New',monospace;
+      font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+.cta-pair{display:flex;align-items:center;gap:clamp(16px,2.4vw,30px);flex-wrap:wrap}
+.founder{margin-top:26px;padding-top:22px;border-top:1px solid rgba(34,48,42,.22);max-width:var(--measure)}
+.founder p{font-size:15px;line-height:1.5}
+.founder a{border-bottom:1px solid currentColor;padding-bottom:2px}
 
 /* ---- nav: five items, not sticky, no promo bar ---- */
 .nav{display:flex;justify-content:space-between;align-items:center;gap:24px;
